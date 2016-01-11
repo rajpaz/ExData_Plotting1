@@ -1,6 +1,8 @@
 # plot 3
 # Plot
 source("./getFebData.R")
+if (!exists("febData"))
+  febData = getFebData()
 png("./Plot3.png", width = 480, height = 480)
 plot(febData$date_time,febData$Sub_metering_1,
      ylab="Energy Sub Metering",type="l",col="black",xlab="")
